@@ -1,8 +1,8 @@
-cd ~/git
-git init --bare gis.git
-cd ~/
-git clone bang@mac.local:/Users/bang/git/gis.git temp
-mv temp/.git web
-rm -rf temp
+Cài đặt
+=======
 
-sudo /usr/local/mysql/support-files/mysql.server restart
+- Cài PHP & Mysql
+- Cập nhật password trong file include.php.
+- Tạo database
+- Chạy file db.sql bằng lệnh:
+mysql -u root <tên_database> -p < db.sql
