@@ -36,6 +36,7 @@ $conn->close();
       infoWindow.open(map, marker);
     });
     bounds.extend(marker.position);
+    marker.setVisible(false);
     allMarkers.push(marker);
     return marker;
   }
@@ -81,16 +82,15 @@ $conn->close();
       if (this.getZoom() > 15) {
         this.setZoom(15);
       }
+      google.maps.event.addListener(map, 'zoom_changed', function() {
+        var zoom = map.getZoom();
+        // iterate over markers and call setVisible
+        for (i = 0; i < allMarkers.length; i++) {
+          allMarkers[i].setVisible(zoom > 14);
+        }
+      });
     });
     map.fitBounds(bounds);
-
-    google.maps.event.addListener(map, 'zoom_changed', function() {
-      var zoom = map.getZoom();
-      // iterate over markers and call setVisible
-      for (i = 0; i < allMarkers.length; i++) {
-        allMarkers[i].setVisible(zoom > 14);
-      }
-    });
   }
 </script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAIR855uWcQY1sCz2e1Xy72vma3k72Sdzs&language=vi&region=VN&callback=initMap"></script>
