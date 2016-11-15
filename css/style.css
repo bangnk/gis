@@ -7,3 +7,27 @@
     position: absolute;
     overflow: hidden;
 }
+
+#map.has_header {
+    height: auto;
+    top: 50px;
+    bottom: 0;
+}
+
+.header {
+    padding: 5px;
+}
+
+
+.spinner {
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%; /* Rounds out the halo */
+    opacity: .7; /* Some subtle opacity to help blend with variable background colors */
+}
+.spinner.medium {
+    height: 32px; width: 32px;
+    background: url("spiffygif_32x32.gif");
+    display: inline-block;
+    vertical-align: middle;
+}
