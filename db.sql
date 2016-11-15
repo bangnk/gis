@@ -12,10 +12,8 @@ INSERT INTO markers VALUES (NULL, 'Đại học Cần Thơ - Khu 2', 10.0309759,
 INSERT INTO markers VALUES (NULL, 'Đại học Cần Thơ - Khu 3', 10.033925, 105.779673, '<div>Khoa Công nghệ Thông tin và Truyền thông (CNTT&TT) - Trường Đại học Cần Thơ được thành lập năm 1994 trên cơ sở Trung tâm Điện tử và Tin học. Nhiệm vụ  của khoa là đào tạo đại học, sau đại học, nghiên cứu khoa học và chuyển giao công nghệ trong lĩnh vực CNTT&TT.</div><div><img src="/imgs/khu2-khoa.jpg" width="250"></div>');
 INSERT INTO markers VALUES (NULL, 'Đại học Cần Thơ - Khu 1', 10.0193249, 105.7665439, '<div>Đại học Cần Thơ khu 1.</div>');
 
-DROP TABLE IF EXISTS dia_gioi_tinh;
-CREATE TABLE dia_gioi_tinh (
-    id MEDIUMINT NOT NULL AUTO_INCREMENT,
-    id_poly MEDIUMINT NOT NULL,
-    poly POLYGON NOT NULL,
-    PRIMARY KEY (id)
+DROP TABLE IF EXISTS DiaGioiTinh;
+CREATE TABLE DiaGioiTinh (
+    id VARCHAR(20) NOT NULL,
+    poly POLYGON NOT NULL
 ) DEFAULT CHARSET=utf8;
