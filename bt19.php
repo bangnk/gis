@@ -124,7 +124,16 @@ $conn->close();
         });
 
     });
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            marker.setPosition(pos);
+            map.setCenter(pos);
+        });
+    }
   }
+
 </script>
 <script async defer type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAIR855uWcQY1sCz2e1Xy72vma3k72Sdzs&language=vi&region=VN&callback=initMap&libraries=places"></script>
 </body>
