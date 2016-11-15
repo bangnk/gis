@@ -104,24 +104,6 @@ $conn->close();
       });
     });
     map.fitBounds(bounds);
-
-    google.maps.event.addListener(map,'click', (function(e) {
-      var path = polyline.getPath();
-      path.push(e.latLng);
-      var circleOptions = {map: map, center: e.latLng, radius:8};
-      var circle = new google.maps.Circle(circleOptions);
-    }));
-
-    // Khởi tạo polyline động
-    var route= new google.maps.MVCArray ();
-    var polyline = new google.maps.Polyline({
-        path: route,
-        strokeColor: "#ff0000",
-        strokeOpacity: 0.6,
-        strokeWeight: 5
-    });
-    // Bổ sung PolyLine vào bản đồ
-    polyline.setMap(map);
   }
   $('form').submit(function(){
     if (document.forms["gis_form"]["address"].value != '') {
