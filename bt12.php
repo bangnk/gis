@@ -36,7 +36,6 @@ $conn->close();
       infoWindow.open(map, marker);
     });
     bounds.extend(marker.position);
-    marker.setVisible(false);
     allMarkers.push(marker);
     return marker;
   }
